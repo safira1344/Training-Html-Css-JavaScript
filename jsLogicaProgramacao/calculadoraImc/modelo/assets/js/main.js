@@ -5,8 +5,8 @@ form.addEventListener('submit', function (e){
     const inputPeso = e.target.querySelector('#peso');
     const inputAltura = e.target.querySelector('#altura');
 
-    const peso = Number(inputPeso.value);
-    const altura = Number(inputAltura.value);
+    const peso = Number.isNaN(inputPeso.value);
+    const altura = Number.isNaN(inputAltura.value);
 
     if(!peso) {
         setResultado('Peso inválido', false);
