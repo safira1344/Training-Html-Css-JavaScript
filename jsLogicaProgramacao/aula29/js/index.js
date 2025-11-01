@@ -1,4 +1,6 @@
-const container = document.querySelector('#container');
+const h1 = document.querySelector('.container h1');
+
+const data = new Date();
 
 function formataData (data) {
     const dia = data.getDate();
@@ -8,39 +10,37 @@ function formataData (data) {
     const hora = data.getHours();
     const minuto = data.getMinutes();
 
-    return `${formataDiasSemana(diaSemana)}, ${dia} de ${formataMeses(mes)} de ${ano} ${hora} : ${minuto}}`;
+    return `${formataDiasSemana(diaSemana)}, ${dia} de ${formataMeses(mes)} de ${ano} ${hora} : ${minuto}`;
 }
-
-
 
 
 function formataDiasSemana (dia) {
     let diaSemanaTexto;
     switch (dia) {
         case 0:
-            diaSemanaTexto = 'Domingo';
-            break;
+            diaSemanaTexto = 'domingo';
+            return diaSemanaTexto;
         case 1:
-            diaSemanaTexto = 'Segunda';
-            break;
+            diaSemanaTexto = 'segunda-feira';
+            return diaSemanaTexto;
         case 2:
-            diaSemanaTexto = 'Terça';
-            break;
+            diaSemanaTexto = 'terça-feira';
+            return diaSemanaTexto;
         case 3:
-            diaSemanaTexto = 'Quarta';
-            break;
+            diaSemanaTexto = 'quarta-feira';
+            return diaSemanaTexto;
         case 4:
-            diaSemanaTexto = 'Quinta';
-            break;
+            diaSemanaTexto = 'quinta-feira';
+            return diaSemanaTexto;
         case 5:
-            diaSemanaTexto = 'Sexta';
-            break;
+            diaSemanaTexto = 'sexta-feira';
+            return diaSemanaTexto;
         case 6:
-            diaSemanaTexto = 'Sábado';
-            break;
+            diaSemanaTexto = 'sábado';
+            return diaSemanaTexto;
         default:
             diaSemanaTexto = '';
-            break;
+            return diaSemanaTexto;
     }
 }
 
@@ -50,42 +50,45 @@ function formataMeses (mes) {
     switch (mes) {
         case 0:
             mesTexto = 'Janeiro';
-            break;
+            return mesTexto;
         case 1:
             mesTexto = 'Fevereiro';
-            break;
+            return mesTexto;
         case 3:
             mesTexto = 'Março';
-            break;
+            return mesTexto;
         case 4:
             mesTexto = 'Abril';
-            break;
+            return mesTexto;
         case 5:
             mesTexto = 'Maio';
-            break;
+            return mesTexto;
         case 6:
             mesTexto = 'Junho';
-            break;
+            return mesTexto;
         case 7:
             mesTexto = 'Julho';
-            break;
+            return mesTexto;
         case 8:
             mesTexto = 'Agosto';
-            break;
+            return mesTexto;
         case 9:
             mesTexto = 'Setembro';
-            break;
+            return mesTexto;
         case 10:
             mesTexto = 'Outubro';
-            break;
+            return mesTexto;
         case 11:
             mesTexto = 'Novembro';
-            break;
+            return mesTexto;
         case 12:
             mesTexto = 'Dezembro';
-            break;
+            return mesTexto;
         default:
             mesTexto = '';
-            break;   
+            return mesTexto;   
     }
 }
+
+h1.innerHTML = formataData(data);
+
