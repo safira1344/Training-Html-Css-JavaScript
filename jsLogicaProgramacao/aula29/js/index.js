@@ -10,7 +10,7 @@ function formataData (data) {
     const hora = data.getHours();
     const minuto = data.getMinutes();
 
-    return `${formataDiasSemana(diaSemana)}, ${dia} de ${formataMeses(mes)} de ${ano} ${hora} : ${minuto}`;
+    return `${formataDiasSemana(diaSemana)}, ${dia} de ${formataMeses(mes)} de ${ano} ${zeroAEsquerda(hora)} : ${zeroAEsquerda(minuto)}`;
 }
 
 
@@ -90,5 +90,13 @@ function formataMeses (mes) {
     }
 }
 
+function zeroAEsquerda (num) {
+    return num >= 10 ? num : `0${num}`
+}
+
 h1.innerHTML = formataData(data);
 
+
+// const h1 = document.querySelector('.container h1');
+// const data = new Date();
+// h1.innerHTML = data.toLocaleDateString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
