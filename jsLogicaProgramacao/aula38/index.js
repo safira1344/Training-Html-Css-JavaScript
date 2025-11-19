@@ -1,5 +1,8 @@
 const numeros = [1,2,3,4,5,6,7,8,9];
 
+//Continue continua para próxima iteração
+//Break sai do laço
+
 // for (let numero in numeros) {
     
 //     if(numero === 2) {
