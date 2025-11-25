@@ -6,16 +6,36 @@
 //checar se o numero é realmente um numero
 //use a funcao com numeros de 0 a 100
 
-function verificaDivisivel (numero) {
-    if(numero < 0 && numero > 100) return "Não é possível verificar";
 
-    if (numero%3 == 0 && numero%5 == 0) return "FizzBuzz";
+// minha versão
+// function fizzBuzz (numero) {
+//     if(typeof numero !== 'number') return numero;
 
-    else if (numero%3 !== 0 && numero%5 !== 0) return numero;
+//     if(numero < 0 && numero > 100 && typeof numero !== 'number') return "Não é possível verificar";
 
-    else if (numero%3 == 0) return "Fizz";
+//     if (numero%3 === 0 && numero%5 === 0) return "FizzBuzz";
 
-    else return "Buzz";
+//     else if (numero%3 !== 0 && numero%5 !== 0) return numero;
+
+//     else if (numero%3 === 0) return "Fizz";
+
+//     else return "Buzz";
+// }
+
+// console.log(fizzBuzz('34'));
+
+
+
+//é muito importante que ifs que verificam mais de uma condição venham antes dos ifs que verificam 1 condição somente.
+function fizzBuzz(numero) {
+    if(typeof numero !== 'number') return numero;
+    if (numero % 3 === 0 && numero % 5 === 0) return 'FizzBuzz';
+    if(numero % 3 === 0) return 'Fizz';
+    if(numero % 5 === 0) return 'Buzz';
+    return numero;
 }
 
-console.log(verificaDivisivel(15));
+console.log('a', fizzBuzz('a'));
+for(let i = 0; i <= 100; i++) {
+    console.log(i, fizzBuzz(i));
+}
