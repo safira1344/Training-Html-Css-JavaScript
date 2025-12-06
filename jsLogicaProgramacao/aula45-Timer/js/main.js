@@ -1,7 +1,8 @@
 function criaHoraDosSegundos(segundos) {
-    const data = new Date(segundos * 100);
+    const data = new Date(segundos * 1000);
     return data.toLocaleDateString('pt-BR', {
-        hour12: false
+        hour12: false,
+        timeZone: 'GMT'
     });
 }
 
