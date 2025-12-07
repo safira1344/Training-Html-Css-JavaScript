@@ -2,11 +2,9 @@ function criaHoraDosSegundos(segundos) {
     const data = new Date(segundos * 1000);
     return data.toLocaleDateString('pt-BR', {
         hour12: false,
-        timeZone: 'GMT'
+        timeZone: 'UTC'
     });
 }
-
-console.log(criaHoraDosSegundos(10));
 
 const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
@@ -16,13 +14,14 @@ let segundos = 0;
 let timer;
 
 function iniciaRelogio() {
-    const timer = setInterval(function() {
+    timer = setInterval(function() {
         segundos ++;
         relogio.innerHTML = criaHoraDosSegundos(segundos);
     }, 1000);
 }
 
 iniciar.addEventListener('click', function(event) {
+    clearInterval(timer);
     iniciaRelogio();
 });
 
