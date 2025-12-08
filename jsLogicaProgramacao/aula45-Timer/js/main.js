@@ -1,8 +1,8 @@
 function criaHoraDosSegundos(segundos) {
     const data = new Date(segundos * 1000);
-    return data.toLocaleDateString('pt-BR', {
+    return data.toLocaleDateString('pt-br', {
         hour12: false,
-        timeZone: 'UTC'
+        timeZone: 'UTC',
     });
 }
 
@@ -15,21 +15,29 @@ let timer;
 
 function iniciaRelogio() {
     timer = setInterval(function() {
-        segundos ++;
+        segundos++;
         relogio.innerHTML = criaHoraDosSegundos(segundos);
     }, 1000);
 }
 
-iniciar.addEventListener('click', function(event) {
-    clearInterval(timer);
-    iniciaRelogio();
-});
+document.addEventListener('click', function(e) {
+    const el = e.target;
 
-pausar.addEventListener('click', function(event) {
-    clearInterval(timer);
-});
+    if(el.classList.contains('zerar')) {
+        clearInterval(timer);
+        relogio.classList.remove('pausado');
+        relogio.innerHTML = '00:00:00';
+        segundos = 0;
+    }
 
-zerar.addEventListener('click', function(event) {
-    clearInterval(timer);
-    relogio.innerHTML = '00:00:00';
+    if(el.classList.contains('iniciar')) {
+        relogio.classList.remove('pausado');
+        clearInterval(timer);
+        iniciaRelogio();
+    }
+
+    if(el.classList.contains('pausar')) {
+        clearInterval(timer);
+        relogio.classList.add('pausado');
+    }
 });
