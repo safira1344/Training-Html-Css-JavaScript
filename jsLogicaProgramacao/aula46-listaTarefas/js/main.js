@@ -9,6 +9,8 @@ function criaLi() {
 
 function criaTarefa(textoInput) {
     const li = criaLi();
+    li.innerText = textoInput;
+    tarefas.appendChild(li);
 }
 
 btnTarefa.addEventListener('click', function(e) {
