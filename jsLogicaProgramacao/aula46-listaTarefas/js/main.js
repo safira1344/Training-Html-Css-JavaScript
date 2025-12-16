@@ -14,11 +14,13 @@ inputTarefa.addEventListener('keypress', function(e) {
     }
 })
 
+// funcao para limpar input
 function limpaInput() {
     inputTarefa.value = '';
     inputTarefa.focus();
 }
 
+// função criaTarefa
 function criaTarefa(textoInput) {
     const li = criaLi();
     li.innerText = textoInput;
