@@ -20,12 +20,22 @@ function limpaInput() {
     inputTarefa.focus();
 }
 
+function criaBotaoApagar(li) {
+    li.innerText += ' ';
+    const botaoApagar = document.createElement('button');
+    botaoApagar.innerText = 'Apagar';
+    //botaoApagar.classList.add('apagar');
+    botaoApagar.setAttribute('class', 'apagar');
+    li.appendChild(botaoApagar);
+}
+
 // função criaTarefa
 function criaTarefa(textoInput) {
     const li = criaLi();
     li.innerText = textoInput;
     tarefas.appendChild(li);
     limpaInput();
+    criaBotaoApagar(li);
 }
 
 btnTarefa.addEventListener('click', function(e) {
