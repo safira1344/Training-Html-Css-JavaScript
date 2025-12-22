@@ -42,3 +42,11 @@ btnTarefa.addEventListener('click', function(e) {
     if(!inputTarefa.value) return;
     criaTarefa(inputTarefa.value);
 });
+
+document.addEventListener('click', function(e) {
+    const el = e.target;
+
+    if(el.classList.contains('apagar')) {
+        el.parentElement.remove();
+    }
+})
