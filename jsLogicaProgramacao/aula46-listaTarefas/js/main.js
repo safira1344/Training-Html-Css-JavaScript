@@ -1,3 +1,6 @@
+//Use innerText quando quiser apenas mudar o texto de algo
+//Use appendChild quando quiser adicionar novos elementos à página (listas, cards, itens dinâmicos, etc.)
+
 const inputTarefa = document.querySelector('.input-tarefa');
 const btnTarefa = document.querySelector('.btn-tarefa');
 const tarefas = document.querySelector('.tarefas');
@@ -20,6 +23,11 @@ function limpaInput() {
     inputTarefa.focus();
 }
 
+
+// classList é é uma API específica para manipular classes CSS de um elemento. Específico, seguro e recomendado para classes.
+// setAttribute é um método genérico para definir qualquer atributo HTML (inclusive class). É genérico e pode causar sobrescrita indesejada de classes.
+
+
 function criaBotaoApagar(li) {
     li.innerText += ' ';
     const botaoApagar = document.createElement('button');
@@ -36,6 +44,7 @@ function criaTarefa(textoInput) {
     tarefas.appendChild(li);
     limpaInput();
     criaBotaoApagar(li);
+    salvarTarefas();
 }
 
 btnTarefa.addEventListener('click', function(e) {
@@ -48,5 +57,31 @@ document.addEventListener('click', function(e) {
 
     if(el.classList.contains('apagar')) {
         el.parentElement.remove();
+        salvarTarefas();
     }
-})
+});
+
+function salvarTarefas() {
+    const liTarefas = tarefas.querySelectorAll('li');
+    const listaDeTarefas = [];
+
+    for (let tarefa of liTarefas) {
+        let tarefaTexto = tarefa.innerText;
+        tarefaTexto = tarefaTexto.replace('Apagar','');
+        listaDeTarefas.push(tarefaTexto);
+    }
+
+    const tarefasJSON = JSON.stringify(listaDeTarefas);
+    localStorage.setItem('tarefas', tarefasJSON);
+}
+
+function adicionaTarefasSalvas() {
+    const tarefas = localStorage.getItem('tarefas');
+    const listaDeTarefas = JSON.parse(tarefas);
+
+    for(let tarefa of listaDeTarefas) {
+        criaTarefa(tarefa);
+    }
+}
+
+adicionaTarefasSalvas();
