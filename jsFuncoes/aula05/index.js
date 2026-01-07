@@ -1,3 +1,14 @@
+// Uma função de callback é uma função passada como argumento para outra função, para ser executada posteriormente.
+// Em JavaScript, funções são valores (first-class citizens), então podem:
+// Ser atribuídas a variáveis
+// Ser passadas como parâmetro
+// Ser retornadas por outras funções
+
+// JavaScript é:
+// Single-thread
+// Não bloqueante
+// Orientado a eventos
+
 function rand(min = 1000, max = 3000) {
     const num = Math.random() * (max - min) + min;
     return Math.floor(num);
