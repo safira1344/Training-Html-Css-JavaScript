@@ -1,4 +1,6 @@
 // IIFE -> Immediately invoked function expression
+// protege qualquer função do escopo global
+
 (function(idade, peso, altura) {
     const sobrenome = 'barbosa';
     function criaNome(nome) {
@@ -11,4 +13,5 @@
 
     falaNome();
     console.log(idade, peso, altura);
+
 })(30,80,1.80);
