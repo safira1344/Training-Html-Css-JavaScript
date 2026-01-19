@@ -1,5 +1,5 @@
-//Função construtora -> objetos
-// Função fábrica -> objetos
+//Função construtora (constructor function) -> objetos
+// Função fábrica (factory function) -> objetos
 // Construtora -> Pessoa (new)
 function Pessoa(nome, sobrenome) {
     //Atributos ou métodos privados
