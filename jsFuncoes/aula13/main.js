@@ -34,3 +34,7 @@ console.log(novo2);
 const nome3 = 'Luiz, Otávio, Miranda';
 const nomes3 = nome3.split(','); //divide string em várias partes
 console.log(nomes3);
+
+const nome3Array = ['Luiz, Otávio, Miranda'];
+const nomes4 = nome3Array.join(' '); //junta os elementos de um array em uma única string
+console.log(nomes4);
