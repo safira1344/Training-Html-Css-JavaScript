@@ -52,12 +52,18 @@
 function Pessoa(nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
+
+    Object.freeze(this); //ele bloqueia de que essa função construtora tenha seus atributos alterados, apagados ou adicionados;
 }
 
 // {} <- this -> this
 const p1 = new Pessoa('Fernanda', 'Souza');
+p1.nome = 'Outra coisa';
+p1.sobrenome = 'QLQ';
+p1.fala = function() {console.log('Oi');};
+p1.fala();
 console.log(p1);
 
 const p2 = {};
-p2.nome = 'Luiz';
+p2.nome = 'Nathalia';
 console.log(p2);
