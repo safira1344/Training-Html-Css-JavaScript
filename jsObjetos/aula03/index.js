@@ -29,6 +29,7 @@ function criaProduto(nome) {
             return nome;
         },
         set nome(valor) {
+            valor = valor.replace('coisa.', '');
             nome = valor;
         }
     };
@@ -40,4 +41,5 @@ function criaProduto(nome) {
 // console.log(p1.estoque);
 
 const p2 = criaProduto('Camiseta');
+p2.nome = 'Qualquer coisa.';
 console.log(p2.nome);
