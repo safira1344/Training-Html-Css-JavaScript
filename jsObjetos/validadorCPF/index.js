@@ -17,4 +17,6 @@
 
 let cpf = '705.484.450-52';
 let cpfLimpo = cpf.replace(/\D+/g, '');
-console.log(cpfLimpo.localeCompare(el => el));
+console.log(cpfLimpo.map(el => el));
+cpfArray = Array.from(cpfLimpo);
+console.log(cpfArray.reduce((ac,val) => ac + Number(val), 0));
