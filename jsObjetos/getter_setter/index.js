@@ -31,3 +31,25 @@ class Carro {
 const c1 = new Carro('Fusca');
 c1.velocidade = 99;
 console.log(c1.velocidade);
+
+
+class Pessoa {
+    constructor(nome,sobrenome) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+    }
+    get nomeCompleto() {
+        return this.nome + ' ' + this.sobrenome;
+    }
+
+    set nomeCompleto(valor) {
+        valor = valor.split(' ');
+        this.nome = valor.shift();
+        this.sobrenome = valor.join(' ');
+    }
+}
+
+const p1 = new Pessoa ('Fernanda', 'Barbosa Souza');
+p1.nomeCompleto = 'Fernanda Mirely Barbosa Souza';
+console.log(p1.nome);
+console.log(p1.sobrenome);
