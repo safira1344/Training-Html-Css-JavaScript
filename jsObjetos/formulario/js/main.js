@@ -29,8 +29,8 @@ class ValidaFormulario {
 
         if (senha.value !== repetirSenha.value) {
             valid = false;
-            this.criaErro(senha, 'Campos senha e repetir senha precisar ser iguais.');
-            this.criaErro(repetirSenha, 'Campos senha e repetir senha precisar ser iguais.');
+            this.criaErro(senha, 'Campos "senha" e "repetir senha" precisa ser iguais.');
+            this.criaErro(repetirSenha, 'Campos "senha" e "repetir senha" precisa ser iguais.');
         }
 
         if (senha.value.length < 6 || senha.value.length > 12) {
