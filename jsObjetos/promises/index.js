@@ -4,6 +4,13 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+// Promise: representa uma operação assíncrona (que demora)
+// resolve: quando deu tudo certo
+// reject: quando deu erro
+
+// JavaScript é assíncrono
+// Promises vão para a fila de execução (event loop)
+
 function esperaAi(msg, tempo) {
     return new Promise((resolve, reject) => {
         if(typeof msg !== 'string') reject(false);
