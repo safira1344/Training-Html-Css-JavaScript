@@ -21,6 +21,12 @@ function esperaAi(msg, tempo) {
     });
 }
 
+// o then() executa um código quando a Promise é resolvida (sucesso)
+// .then() recebe o valor do resolve(msg)
+// Cada .then() pode retornar outra Promise
+// O próximo .then() espera isso
+// se um then() falhar interrompe todo o encadeamento
+
 esperaAi('Conexão com o BD', rand(1,3))
     .then(resposta => {
         console.log(resposta);
