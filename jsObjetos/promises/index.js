@@ -16,7 +16,7 @@ function esperaAi(msg, tempo) {
         if(typeof msg !== 'string') reject(false);
 
         setTimeout(() => {
-            resolve(msg);
+            resolve(msg.toUpperCase() + ' - Passei na promise');
         }, tempo);
     });
 }
@@ -55,4 +55,12 @@ const promises  = [
     esperaAi('Promise 2', 3000),
     esperaAi('Promise 3', 3000),
     'Outro valor'
-]
+];
+
+Promise.all(promises)
+    .then(function(valor) {
+        console.log(valor);
+    })
+    .catch(function(erro) {
+        console.log(erro);
+    });
