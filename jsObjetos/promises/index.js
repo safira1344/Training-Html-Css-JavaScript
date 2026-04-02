@@ -47,3 +47,12 @@ esperaAi('Conexão com o BD', rand(1,3))
     });
 
     console.log('Isso aqui será exibido antes de qualquer promisse.');
+
+//Promise.all Promice.race Promise.resolve Promise.reject
+const promises  = [
+    'Primeiro valor',
+    esperaAi('Promise 1', 3000),
+    esperaAi('Promise 2', 3000),
+    esperaAi('Promise 3', 3000),
+    'Outro valor'
+]
