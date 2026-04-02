@@ -48,7 +48,11 @@ esperaAi('Conexão com o BD', rand(1,3))
 
     console.log('Isso aqui será exibido antes de qualquer promisse.');
 
-//Promise.all Promice.race Promise.resolve Promise.reject
+    //Promise.all Espera todas (falha se uma falhar)
+    // Promice.race Retorna a primeira que terminar
+    //  Promise.resolve Cria promise já resolvida
+    //  Promise.reject Cria promise já rejeitada
+
 const promises  = [
     'Primeiro valor',
     esperaAi('Promise 1', 3000),
@@ -88,4 +92,4 @@ baixaPagina()
     .then(dadosPagina => {
         console.log(dadosPagina);
     })
-    .catch(e => console.log(e));
+    .catch(e => console.log('ERRO', e));
