@@ -37,6 +37,21 @@ function esperaAi(msg, tempo) {
 //     .catch(e => console.log(e));
 
 
+// Quando usar async/await?
+// Use quando:
+
+// Trabalhar com APIs (fetch)
+// Ler arquivos
+// Fazer requisições HTTP
+// Qualquer operação assíncrona
+
+// Uma função async:
+// Sempre retorna uma Promise
+// Permite usar await dentro dela
+
+// O await:
+// Espera uma Promise ser resolvida
+// Só pode ser usado dentro de funções async e “pausa” a execução da função sem travar o resto do programa.
 
 async function executa() {
     try{
