@@ -57,3 +57,11 @@ function carregaResultado(response) {
     const resultado = document.querySelector('.resultado');
     resultado.innerHTML = response;
 }
+
+fetch('pagina4.html')
+    .then(resposta => {
+        if(resposta.status !== 200) throw new Error('Erro 404 nosso');
+        return resposta.text();
+    })
+    .then(html => console.log(html)) //console.log()  console.warn()  console.error()
+    .catch(e => console.error(e));
