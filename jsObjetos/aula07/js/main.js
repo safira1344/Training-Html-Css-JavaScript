@@ -22,20 +22,20 @@ document.addEventListener('click', e => {
     }
 });
 
-function carregaPagina(el) {
-    const href = el.getAttribute('href');
+// function carregaPagina(el) {
+//     const href = el.getAttribute('href');
 
-    request({
-        method:'GET',
-        url: href,
-        success(response) {
-            carregaResultado(response);
-        },
-        error(errorText) {
-            console.log(errorText);
-        }
-    });
-}
+//     request({
+//         method:'GET',
+//         url: href,
+//         success(response) {
+//             carregaResultado(response);
+//         },
+//         error(errorText) {
+//             console.log(errorText);
+//         }
+//     });
+// }
 
 // async function carregaPagina(el) {
 //     const href = el.getAttribute('href');
@@ -53,15 +53,30 @@ function carregaPagina(el) {
 //     }
 // }
 
+async function carregaPagina(el) {
+    try {
+        const href = el.getAttribute('href');
+        const response = await fetch(href);
+
+        if(response.status !== 200) throw new Error('ERRO 404!');
+        
+        const html = await response.text();
+        carregaResultado(html);
+    } catch(e) {
+        console.log(e);
+    }
+}
+
 function carregaResultado(response) {
     const resultado = document.querySelector('.resultado');
     resultado.innerHTML = response;
 }
 
-fetch('pagina4.html')
-    .then(resposta => {
-        if(resposta.status !== 200) throw new Error('Erro 404 nosso');
-        return resposta.text();
-    })
-    .then(html => console.log(html)) //console.log()  console.warn()  console.error()
-    .catch(e => console.error(e));
+//fetch API
+// fetch('pagina4.html')
+//     .then(resposta => {
+//         if(resposta.status !== 200) throw new Error('Erro 404 nosso');
+//         return resposta.text();
+//     })
+//     .then(html => console.log(html)) //console.log()  console.warn()  console.error()
+//     .catch(e => console.error(e));
