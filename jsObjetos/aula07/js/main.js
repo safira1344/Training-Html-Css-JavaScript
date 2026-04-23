@@ -72,7 +72,8 @@ function carregaResultado(response) {
     resultado.innerHTML = response;
 }
 
-//fetch API
+//fetch API ------------------------------
+
 // fetch('pagina4.html')
 //     .then(resposta => {
 //         if(resposta.status !== 200) throw new Error('Erro 404 nosso');
