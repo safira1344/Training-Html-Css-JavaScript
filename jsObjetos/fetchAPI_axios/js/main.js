@@ -1,3 +1,16 @@
+// FETCH API
+// Serve para fazer requisições HTTP (tipo GET, POST, etc.)
+// Retorna uma Promise
+
+// Diferença principal
+// ✅ Fetch
+// Nativo do navegador para fazer requisições HTTP
+// Precisa converter manualmente para .json()
+
+// ✅ Axios
+// Biblioteca externa para fazer requisições HTTP
+// Já retorna o JSON pronto:
+
 fetch('pessoas.json')
     .then(resposta => resposta.json())
     .then(json => carregaElementosNaPagina(json));
