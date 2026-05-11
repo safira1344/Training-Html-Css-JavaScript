@@ -19,23 +19,31 @@ const app = express();
 
 // Tudo depois do ? é a query string.
 
+app.use(
+    express.urlencoded({extended: true}));
+
 app.get('/', (req, res) => {
     res.send(`
         <form action="/" method="POST">
-        Nome: <input type="text" name="nome">
+        Nome do cliente: <input type="text" name="nome">
+        Outro campo: <input type="text" name="aquioutrocampo">
         <button>Enviar Formulário</button>
         </form>
         `);
 });
 
 app.get('/testes/{/:idUsuarios}/{/:parametro}', (req, res) => {
+    // /profiles/3
+    // /profiles/?chave1=valor1&chave2=valor2&chave3=valor3
+    // 
     console.log(req.params);
     console.log(req.query);
     res.send(req.query);
 });
 
 app.post('/', (req, res) => {
-    res.send('Recebi o formulário!');
+    console.log(req.body);
+    res.send(`O que você me enviou foi: ${req.body.nome}`);
 });
 
 app.listen(3000, () => {
