@@ -1,0 +1,65 @@
+O package.json é o arquivo principal de configuração do projeto Node.
+Ele guarda:
+
+nome do projeto;
+versão;
+dependências;
+scripts;
+configurações gerais.
+
+
+Express-------------
+Framework usado para:
+
+criar servidor;
+rotas;
+APIs;
+middleware.
+
+
+EJS----------------
+Motor de template.
+Permite renderizar HTML dinamicamente.
+
+Exemplo:
+
+<h1><%= nome %></h1>
+
+
+Nodemon--------------
+Reinicia o servidor automaticamente quando você salva alterações.
+
+
+Middleware---------------
+app.use(express.urlencoded({extended: true}));
+O que isso faz?
+
+Permite capturar dados enviados por formulário HTML (POST).
+
+Exemplo:
+
+<form method="POST">
+
+Sem isso:
+
+req.body
+
+viria undefined.
+
+
+path.resolve------------------
+path.resolve(__dirname, 'src', 'views')
+
+Monta um caminho absoluto.
+
+
+__dirname---------------------
+Representa a pasta atual do arquivo.
+
+
+Callback----------------------
+() => {
+    console.log('Acessar http://localhost:3000');
+}
+
+Executa quando o servidor inicia.
