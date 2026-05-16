@@ -63,3 +63,39 @@ Callback----------------------
 }
 
 Executa quando o servidor inicia.
+
+
+req------------------------
+Representa a requisição.
+
+Contém:
+
+body;
+params;
+query;
+headers.
+
+
+res-----------------
+Representa a resposta.
+
+
+M → Model-----------
+
+Responsável pelos dados/database.
+
+(Não existe ainda no projeto.)
+
+V → View-------------
+
+Interface.
+
+Aqui:
+views/index.ejs
+
+C → Controller--------
+
+Lógica da aplicação.
+
+Aqui:
+controllers/
