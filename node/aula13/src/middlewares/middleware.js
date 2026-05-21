@@ -1,3 +1,4 @@
+// ordem dos middlewares importam, porque o express executa em sequência
 exports.middlewareGlobal = (req, res, next) => {
     next();
 };
