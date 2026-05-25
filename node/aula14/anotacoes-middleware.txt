@@ -1,0 +1,25 @@
+"Algo precisa acontecer ANTES da rota?"
+
+Se sim → middleware.
+
+Exemplos:
+
+autenticar usuário
+validar token
+validar body
+registrar logs
+verificar permissões
+
+
+Middleware é:
+
+✔ Uma função intermediária
+✔ Executada durante a requisição
+✔ Pode modificar request/response
+✔ Pode bloquear acesso
+✔ Pode chamar próximo middleware
+✔ Base da arquitetura Express
+
+
+app.use()	Middleware
+app.get()	Rota GET
