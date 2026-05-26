@@ -2,7 +2,6 @@ const express = require('express');
 const route = express.Router();
 const homeController = require('./src/controllers/homeController');
 const contatoController = require('./src/controllers/contatoController');
-const meuMidleware = require('./src/middlewares/middleware');
 
 // function meuMidleware(req, res, next) {
 //     req.session = {nome:'Fernanda', sobrenome: Mirely};

@@ -4,12 +4,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.CONNECTIONSTRING) 
     .then(() => {
-        console.log('Conectei à base de dados.');
+        console.log('MongoDB conectado!');
         app.emit('pronto');
     })
-    .catch(e => console.log(e));
+    .catch(e => console.error('Erro ao conectar:', e));
 
 const routes = require('./routes');
 const path = require('path');
