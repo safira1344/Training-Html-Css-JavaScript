@@ -1,11 +1,15 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const connectionString = 'mongodb+srv://safiraaabarbosaaa_db_user:<db_password>@cursojs01.vvnaehq.mongodb.net/BASEDEDADOS?appName=cursojs01';
-mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true})
+
+mongoose.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
+        console.log('Conectei à base de dados.');
         app.emit('pronto');
-    });
+    })
+    .catch(e => console.log(e));
 
 const routes = require('./routes');
 const path = require('path');
