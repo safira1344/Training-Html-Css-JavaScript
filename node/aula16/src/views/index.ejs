@@ -8,7 +8,11 @@
 <body>
 
     <section class="container">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quos possimus nemo esse consequatur veritatis modi non, assumenda expedita animi adipisci, eligendi laborum dolorem impedit explicabo sed magnam exercitationem corrupti?</h1>
+        <h1>
+            <% numeros.forEach(num => { %>
+                <%= num %><br>
+            <% }); %>
+        </h1>
     </section>
 
     <form action="/" method="post">
