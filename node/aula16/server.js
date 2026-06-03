@@ -4,16 +4,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.CONNECTIONSTRING,
-    {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-    })
-    .then(() => {
-    app.emit('pronto');
-    })
-    .catch(e => console.log(e));
+mongoose.connect(process.env.CONNECTIONSTRING);
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
