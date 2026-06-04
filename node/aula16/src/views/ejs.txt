@@ -1,3 +1,5 @@
+EJS é uma linguagem de templates simples que permite gerar marcação HTML com JavaScript puro
+
 <% Controle de fluxo (if, for...) %>
 <%= Imprime escapando caracteres %>
 <%- Imprime sem escapar caracteres %>
