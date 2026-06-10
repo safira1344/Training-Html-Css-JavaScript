@@ -33,6 +33,7 @@ class Login {
                 }
     }
 
+    //operações de base de dados precisa sempre trabalhar com promises (async)
     async register() {
         this.valida();
         if(this.errors.length > 0) return;
@@ -60,7 +61,7 @@ class Login {
         if(!validator.isEmail(this.body.email)) this.errors.push('E-mail inválido');
 
         // A senha precisa ter entre 3 e 50
-        if(this.body.password.length < 3 || this.body.password.length >= 50) {
+        if(this.body.password.length < 3 || this.body.password.length > 50) {
             this.errors.push('A senha precisa ter entre 3 e 50 caracteres.');
             }
     }
