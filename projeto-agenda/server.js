@@ -13,6 +13,8 @@ const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/midd
 
 mongoose.connect(process.env.CONNECTIONSTRING);
 
+console.log(process.env.CONNECTIONSTRING);
+
 mongoose.connection.on('error', (err) => {
     console.error('Erro na conexão com o MongoDB:', err);
 });
@@ -32,7 +34,7 @@ const sessionOptions = session({
     saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        httpOnly: true
+        httpOnly: false
     }
 });
 
