@@ -13,7 +13,7 @@ const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/midd
 
 mongoose.connect(process.env.CONNECTIONSTRING);
 
-console.log(process.env.CONNECTIONSTRING);
+// console.log(process.env.CONNECTIONSTRING);
 
 mongoose.connection.on('error', (err) => {
     console.error('Erro na conexão com o MongoDB:', err);
@@ -44,15 +44,17 @@ app.use(flash());
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
+
 app.use(csrf());
 app.use(middlewareGlobal);
 app.use(checkCsrfError);
+
 app.use(csrfMiddleware);
 app.use(routes);
 
 app.on('pronto', () => {
-    app.listen(3000, () => {
-        console.log('Acessar http://localhost:3000');
-        console.log('Servidor executando na porta 3000');
+    app.listen(7000, () => {
+        console.log('Acessar http://localhost:7000');
+        console.log('Servidor executando na porta 7000');
     });
 });
