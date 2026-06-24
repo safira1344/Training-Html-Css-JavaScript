@@ -17,20 +17,20 @@ class Login {
     }
 
     async login() {
-            this.valida();
-            if(this.errors.length > 0) return;
-            this.user = await LoginModel.findOne({ email: this.body.email });
+        this.valida();
+        if(this.errors.length > 0) return;
+        this.user = await LoginModel.findOne({ email: this.body.email });
 
-            if(!this.user) {
-                this.errors.push('Usuário não existe.');
-                return; 
-            }
+        if(!this.user) {
+            this.errors.push('Usuário não existe.');
+            return; 
+        }
 
-            if(!bcryptjs.compareSync(this.body.password, this.user.password)) {
-                this.errors.push('Senha inválida');
-                this.user = null;
-                return;
-                }
+        if(!bcryptjs.compareSync(this.body.password, this.user.password)) {
+            this.errors.push('Senha inválida');
+            this.user = null;
+            return;
+        }
     }
 
     //operações de base de dados precisa sempre trabalhar com promises (async)
