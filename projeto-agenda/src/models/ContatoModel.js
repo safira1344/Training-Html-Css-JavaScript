@@ -17,6 +17,7 @@ function Contato(body) {
     this.contato = null;
 }
 
+// como essa função trabalha direto com o banco de dados precisa ser async
 Contato.prototype.register = async function() {
     this.valida();
     if(this.errors.length > 0) return;
